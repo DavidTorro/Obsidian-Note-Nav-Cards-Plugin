@@ -1,0 +1,79 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+import ScreenshotCard from '../components/ScreenshotCard.astro';
+---
+
+<DocsShell
+  title="Personalización"
+  description="Adapta el color principal del componente y aprovecha el soporte para tema claro y oscuro, con estilos separados por responsabilidades."
+>
+  <h2>Color principal</h2>
+  <p>
+    El plugin expone un único ajuste visible: el <strong>color principal</strong>. Define
+    el acento visual de iconos, bordes, brillos y sombras de las tarjetas. El color se
+    expone como variable CSS del plugin, por lo que toda la UI se adapta de forma
+    coherente.
+  </p>
+
+  <h3>Ajuste disponible</h3>
+  <div class="table-wrap">
+    <table class="docs-table">
+      <thead>
+        <tr>
+          <th>Ajuste</th>
+          <th>Descripción</th>
+          <th>Valor por defecto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Color principal</td>
+          <td>Define el acento visual de iconos, bordes, brillos y sombras.</td>
+          <td><code>#2ea8ff</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tema claro y oscuro</h2>
+  <p>
+    Los estilos incluyen variantes para tema claro y oscuro. Las tarjetas adaptan
+    bordes, sombras e iconos al color de acento, manteniendo el contraste en cada modo.
+  </p>
+
+  <div class="docs-gallery">
+    <ScreenshotCard src="/assets/Card-tema-claro.png" title="Tema claro" />
+    <ScreenshotCard src="/assets/Card-tema-oscuro.png" title="Tema oscuro" />
+  </div>
+
+  <h2>Estilos separados</h2>
+  <p>
+    El componente separa estructura y presentación mediante clases CSS específicas y
+    variables reutilizables. La hoja de estilos está dividida por responsabilidades:
+  </p>
+  <ul>
+    <li><code>variables.css</code> — variables y color de acento.</li>
+    <li><code>cards.css</code> — estructura y aspecto de las tarjetas.</li>
+    <li><code>settings.css</code> — estilos de la pestaña de configuración.</li>
+    <li><code>responsive.css</code> — adaptación a distintos anchos.</li>
+  </ul>
+
+  <div class="callout">
+    <span class="callout__icon">🎨</span>
+    <div class="callout__body">
+      Cambiar el color principal actualiza al instante iconos, bordes, brillos y
+      sombras gracias a la variable CSS compartida.
+    </div>
+  </div>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/sintaxis">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Sintaxis</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/comportamiento">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Comportamiento</span>
+    </a>
+  </nav>
+</DocsShell>

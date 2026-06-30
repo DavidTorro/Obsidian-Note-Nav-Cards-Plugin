@@ -1,0 +1,75 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+import CodePreview from '../components/CodePreview.astro';
+---
+
+<DocsShell
+  title="Sintaxis del bloque"
+  description="El bloque note-nav usa pares clave-valor separados por dos puntos. El parser solo acepta claves válidas y descarta el resto."
+>
+  <h2>Formato general</h2>
+  <p>
+    Cada línea del bloque es un par <strong>clave: valor</strong>. La clave indica la
+    dirección de navegación y el valor es el nombre de la nota de destino.
+  </p>
+  <pre class="code-block"><code>clave: valor</code></pre>
+
+  <h2>Claves soportadas</h2>
+  <div class="table-wrap">
+    <table class="docs-table">
+      <thead>
+        <tr>
+          <th>Clave</th>
+          <th>Alias</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>anterior</code></td>
+          <td><code>prev</code></td>
+          <td>Nota anterior en la secuencia.</td>
+        </tr>
+        <tr>
+          <td><code>siguiente</code></td>
+          <td><code>next</code></td>
+          <td>Nota siguiente en la secuencia.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Ejemplos</h2>
+  <p>Bloque con ambas direcciones:</p>
+  <CodePreview label="nota.md" code={`anterior: Nota anterior\nsiguiente: Nota siguiente`} />
+
+  <p>Mismo resultado usando los alias en inglés:</p>
+  <CodePreview label="note.md" code={`prev: Previous note\nnext: Next note`} />
+
+  <h2>Claves no válidas</h2>
+  <p>
+    El parser solo reconoce <code>anterior</code>, <code>siguiente</code> y sus alias
+    <code>prev</code> y <code>next</code>. Cualquier otra clave se ignora sin romper el
+    bloque, así que puedes mezclar líneas válidas con anotaciones sin efectos
+    secundarios.
+  </p>
+
+  <div class="callout">
+    <span class="callout__icon">💡</span>
+    <div class="callout__body">
+      Solo se procesan las claves reconocidas. Si escribes una clave mal, simplemente
+      no genera tarjeta para esa dirección.
+    </div>
+  </div>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/uso">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Uso básico</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/personalizacion">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Personalización</span>
+    </a>
+  </nav>
+</DocsShell>

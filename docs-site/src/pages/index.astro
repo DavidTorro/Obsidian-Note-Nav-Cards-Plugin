@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import CodePreview from '../components/CodePreview.astro';
+import ScreenshotCard from '../components/ScreenshotCard.astro';
+
+const quickFeatures = [
+  {
+    icon: '🧱',
+    title: 'Bloque simple',
+    desc: 'Solo necesitas un bloque note-nav con la nota anterior, la siguiente o ambas.',
+  },
+  {
+    icon: '🪶',
+    title: 'Ligero y nativo',
+    desc: 'Usa la API de Obsidian para abrir enlaces internos y mantener una integración natural con el vault.',
+  },
+  {
+    icon: '🎨',
+    title: 'Personalizable',
+    desc: 'Adapta el color principal del componente y aprovecha soporte para tema claro y oscuro.',
+  },
+];
+
+const features = [
+  { icon: '↔', title: 'Tarjetas anterior y siguiente', desc: 'Renderiza una tarjeta para la nota previa, la siguiente o ambas a la vez.' },
+  { icon: '🌐', title: 'Claves en español e inglés', desc: 'Acepta anterior/siguiente y sus alias prev/next sin configuración extra.' },
+  { icon: '🔗', title: 'Enlaces internos de Obsidian', desc: 'Resuelve y abre las notas con la API nativa del vault.' },
+  { icon: '🌗', title: 'Tema claro, oscuro y color principal', desc: 'Estilos adaptativos y un acento configurable desde los ajustes.' },
+];
+
+const shots = [
+  { src: '/assets/Bloque-codigo-fuente.png', title: 'Bloque en código fuente' },
+  { src: '/assets/Color-picker-ajustes.png', title: 'Selector de color en ajustes' },
+  { src: '/assets/Card-tema-claro.png', title: 'Ejemplo en tema claro' },
+  { src: '/assets/Card-tema-oscuro.png', title: 'Ejemplo en tema oscuro' },
+];
+---
+
+<BaseLayout>
+  <Hero />
+
+  <!-- Vista rápida -->
+  <section class="section">
+    <div class="container quickview">
+      <div class="quickview__text">
+        <span class="section__eyebrow">Vista rápida</span>
+        <h2>Conecta tus notas en segundos</h2>
+        <p>
+          Define una nota anterior, una nota siguiente o ambas, y el plugin genera
+          tarjetas limpias para moverte por tu vault.
+        </p>
+      </div>
+      <CodePreview
+        label="capitulo-02.md"
+        code={`anterior: Introducción\nsiguiente: Configuración avanzada`}
+      />
+    </div>
+  </section>
+
+  <!-- 3 cards -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid-3">
+        {quickFeatures.map((f) => (
+          <FeatureCard icon={f.icon} title={f.title} desc={f.desc} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Características -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__eyebrow">Características</span>
+        <h2 class="section__title">Todo lo que necesitas para navegar</h2>
+        <p class="section__lead">
+          Un plugin enfocado: hace una cosa, la hace bien y se integra de forma nativa.
+        </p>
+      </div>
+      <div class="grid-4">
+        {features.map((f) => (
+          <FeatureCard icon={f.icon} title={f.title} desc={f.desc} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Capturas -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__eyebrow">Capturas</span>
+        <h2 class="section__title">Así se ve en tu vault</h2>
+        <p class="section__lead">
+          Del bloque de código a la tarjeta renderizada, en tema claro y oscuro.
+        </p>
+      </div>
+      <div class="grid-4">
+        {shots.map((s) => (
+          <ScreenshotCard src={s.src} title={s.title} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta__box">
+        <h2 class="cta__title">Empieza creando tu primer bloque</h2>
+        <p class="cta__text">
+          Añade un bloque note-nav en cualquier nota y conecta tus contenidos de
+          forma visual.
+        </p>
+        <a href="/uso" class="btn btn--light">Ver ejemplos</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

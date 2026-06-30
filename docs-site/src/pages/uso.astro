@@ -1,0 +1,50 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+import CodePreview from '../components/CodePreview.astro';
+---
+
+<DocsShell
+  title="Uso básico"
+  description="Crea un bloque note-nav en cualquier nota para generar tarjetas de navegación hacia la nota anterior, la siguiente o ambas."
+>
+  <h2>Cómo crear un bloque note-nav</h2>
+  <p>
+    En cualquier nota, abre un bloque de código con el lenguaje <code>note-nav</code> y
+    añade dentro las claves que quieras. El plugin lo detecta y lo reemplaza por las
+    tarjetas correspondientes.
+  </p>
+
+  <h2>Navegación completa</h2>
+  <p>Con <code>anterior</code> y <code>siguiente</code> se renderizan las dos tarjetas:</p>
+  <CodePreview label="nota.md" code={`anterior: Nota anterior\nsiguiente: Nota siguiente`} />
+
+  <h2>Solo siguiente</h2>
+  <p>Si únicamente defines una dirección, solo se muestra esa tarjeta:</p>
+  <CodePreview label="inicio-tema.md" code={`siguiente: Primera nota del tema`} />
+
+  <h2>Solo anterior</h2>
+  <CodePreview label="final-tema.md" code={`anterior: Nota anterior`} />
+
+  <h2>Claves en inglés</h2>
+  <p>También puedes usar los alias en inglés <code>prev</code> y <code>next</code>:</p>
+  <CodePreview label="note.md" code={`prev: Previous note\nnext: Next note`} />
+
+  <div class="callout callout--warn">
+    <span class="callout__icon">⚠️</span>
+    <div class="callout__body">
+      <strong>Importante:</strong> el nombre debe coincidir con el nombre real de la
+      nota dentro del vault. Si no coincide, el enlace no podrá resolverse.
+    </div>
+  </div>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/instalacion">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Instalación</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/sintaxis">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Sintaxis</span>
+    </a>
+  </nav>
+</DocsShell>

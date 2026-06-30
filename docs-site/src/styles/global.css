@@ -1,0 +1,145 @@
+/* ============================================================
+   global.css — variables, reset, tipografía y colores base
+   ============================================================ */
+
+:root {
+  /* Colores de marca */
+  --color-primary: #2563eb;
+  --color-primary-light: #38bdf8;
+  --color-accent: #7c3aed;
+
+  /* Texto */
+  --color-text: #0f172a;
+  --color-text-soft: #475569;
+  --color-text-muted: #64748b;
+
+  /* Superficies */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8fafc;
+  --color-surface: #ffffff;
+  --color-code-bg: #0f172a;
+  --color-code-text: #e2e8f0;
+
+  /* Bordes */
+  --border-soft: rgba(15, 23, 42, 0.08);
+  --border-softer: rgba(15, 23, 42, 0.05);
+
+  /* Sombras suaves */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.10), 0 6px 14px rgba(15, 23, 42, 0.06);
+  --shadow-glow: 0 30px 80px rgba(37, 99, 235, 0.18);
+
+  /* Radios */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Gradiente de marca */
+  --gradient-brand: linear-gradient(120deg, #2563eb 0%, #38bdf8 60%, #7c3aed 120%);
+
+  /* Layout */
+  --max-width: 1600px;
+  --header-height: 72px;
+
+  /* Tipografía */
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo,
+    Consolas, monospace;
+
+  /* Pesos */
+  --weight-body: 500;
+  --weight-medium: 600;
+  --weight-bold: 700;
+}
+
+/* Reset ligero */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 17.5px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.62;
+  font-size: 1rem;
+  font-weight: var(--weight-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.18;
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--color-text-soft);
+}
+
+ul,
+ol {
+  color: var(--color-text-soft);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-inline: 22px;
+  }
+}

@@ -1,0 +1,96 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+---
+
+<DocsShell
+  title="Flujo de renderizado"
+  description="Cómo viaja la información desde el bloque note-nav hasta la tarjeta renderizada en tu nota, paso a paso."
+  eyebrow="Esquema"
+>
+  <div class="flow-board">
+    <div class="flow">
+      <!-- Entrada -->
+      <div class="flow-stage flow-stage--input">
+        <div class="flow-stage__head"><span class="flow-stage__dot"></span> 📥 Entrada</div>
+        <div class="flow-node">📝 Bloque <code>note-nav</code><br />en la nota</div>
+        <div class="flow-mini-arrow" aria-hidden="true">↓</div>
+        <div class="flow-node">🔎 Parser<br />lee claves y valores</div>
+      </div>
+
+      <div class="flow-connector" aria-hidden="true">→</div>
+
+      <!-- Lógica -->
+      <div class="flow-stage flow-stage--logic">
+        <div class="flow-stage__head"><span class="flow-stage__dot"></span> 🧠 Lógica</div>
+        <div class="flow-decision">🧪 ¿Hay claves válidas?</div>
+        <div class="flow-branches">
+          <div class="flow-branch">
+            <span class="flow-branch__label">anterior / prev</span>
+            <div class="flow-node">⬅️ Tarjeta anterior</div>
+          </div>
+          <div class="flow-branch">
+            <span class="flow-branch__label">siguiente / next</span>
+            <div class="flow-node">➡️ Tarjeta siguiente</div>
+          </div>
+          <div class="flow-branch">
+            <span class="flow-branch__label">ninguna</span>
+            <div class="flow-node flow-node--empty">⚪ Estado vacío</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-connector" aria-hidden="true">→</div>
+
+      <!-- Salida -->
+      <div class="flow-stage flow-stage--output">
+        <div class="flow-stage__head"><span class="flow-stage__dot"></span> 🎯 Salida</div>
+        <div class="flow-node">🎨 Render en <code>.note-nav</code></div>
+        <div class="flow-mini-arrow" aria-hidden="true">↓</div>
+        <div class="flow-node">🚀 Clic abre la nota<br />con <code>workspace.openLinkText</code></div>
+      </div>
+    </div>
+
+    <div class="flow-legend">
+      <span class="flow-legend__item"><span class="flow-legend__dot" style="--c:#38bdf8"></span> Entrada</span>
+      <span class="flow-legend__item"><span class="flow-legend__dot" style="--c:#7c3aed"></span> Lógica</span>
+      <span class="flow-legend__item"><span class="flow-legend__dot" style="--c:#10b981"></span> Salida</span>
+      <span class="flow-legend__item"><span class="flow-legend__dot" style="--c:#f59e0b"></span> Estado vacío</span>
+    </div>
+  </div>
+
+  <h2>Paso a paso</h2>
+  <ol>
+    <li>
+      <strong>Entrada.</strong> Se detecta el bloque <code>note-nav</code> dentro de la
+      nota y el parser lee sus pares clave-valor.
+    </li>
+    <li>
+      <strong>Lógica.</strong> Se comprueba qué direcciones válidas existen. Según el
+      resultado se generan la tarjeta anterior, la siguiente, ambas o un estado vacío si
+      no hay claves reconocidas.
+    </li>
+    <li>
+      <strong>Salida.</strong> Las tarjetas se renderizan dentro de <code>.note-nav</code>
+      y, al hacer clic, se abre la nota enlazada con <code>workspace.openLinkText</code>.
+    </li>
+  </ol>
+
+  <div class="callout">
+    <span class="callout__icon">🧠</span>
+    <div class="callout__body">
+      El flujo es defensivo: las claves desconocidas se ignoran y la falta de notas
+      válidas termina en el estado vacío, nunca en un error.
+    </div>
+  </div>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/comportamiento">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Comportamiento</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/capturas">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Capturas</span>
+    </a>
+  </nav>
+</DocsShell>

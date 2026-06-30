@@ -1,0 +1,38 @@
+---
+const nav = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Instalación', href: '/instalacion' },
+  { label: 'Uso', href: '/uso' },
+  { label: 'Sintaxis', href: '/sintaxis' },
+  { label: 'Capturas', href: '/capturas' },
+];
+const github = 'https://github.com/DavidTorro/Obsidian-Note-Nav-Cards-Plugin';
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__brand">
+      <span class="site-header__mark">↔</span>
+      Note Nav Cards
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      {nav.map((item) => (
+        <a href={item.href} class="site-nav__link">{item.label}</a>
+      ))}
+      <a href={github} class="site-nav__link site-nav__link--cta" target="_blank" rel="noopener">
+        GitHub
+      </a>
+    </nav>
+
+    <label for="nav-toggle" class="nav-toggle__btn" aria-label="Abrir menú">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </label>
+  </div>
+</header>

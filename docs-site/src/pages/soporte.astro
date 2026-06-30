@@ -1,0 +1,55 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+
+const github = 'https://github.com/DavidTorro/Obsidian-Note-Nav-Cards-Plugin';
+const author = 'https://github.com/DavidTorro';
+---
+
+<DocsShell
+  title="Soporte y contribuciones"
+  description="Quién está detrás del plugin, cómo puedes ayudar a mejorarlo y bajo qué licencia se distribuye."
+>
+  <h2>Autor</h2>
+  <p>
+    <strong>David Torró</strong> — <a href={author} target="_blank" rel="noopener">github.com/DavidTorro</a>
+  </p>
+  <p>
+    Note Nav Cards nació como un proyecto personal para usarlo en mi propio vault de
+    Obsidian. Lo dejo publicado por si a alguien más le interesa, le sirve como base o le
+    da ideas para montar su propia navegación entre notas.
+  </p>
+
+  <h2>Cómo ayudar</h2>
+  <p>Si te sirve este plugin, puedes echar una mano de forma muy simple:</p>
+  <ul>
+    <li>⭐ Dale una <strong>estrella</strong> al <a href={github} target="_blank" rel="noopener">repositorio</a>.</li>
+    <li>🐛 Abre una <strong>issue</strong> si detectas un fallo o una mejora.</li>
+    <li>🔀 Abre una <strong>pull request</strong> si quieres proponer cambios.</li>
+    <li>💬 Comparte <strong>feedback</strong> si lo estás usando en tu vault.</li>
+  </ul>
+
+  <h2>Licencia</h2>
+  <p>
+    Este proyecto se distribuye bajo licencia <strong>MIT</strong>. Puedes usarlo,
+    modificarlo y redistribuirlo con los términos habituales de MIT.
+  </p>
+
+  <div class="callout">
+    <span class="callout__icon">💙</span>
+    <div class="callout__body">
+      ¿Lo estás usando en tu vault? Una estrella o un comentario en el repo siempre se
+      agradecen.
+    </div>
+  </div>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/publicacion">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Publicación</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href={github} target="_blank" rel="noopener">
+      <span class="docs-pager__dir">Enlace externo →</span>
+      <span class="docs-pager__title">Repositorio en GitHub</span>
+    </a>
+  </nav>
+</DocsShell>

@@ -1,0 +1,33 @@
+---
+interface Props {
+  label?: string;
+  /** Texto del bloque note-nav, sin las comillas de cerca. */
+  code: string;
+  /** Mostrar las comillas ```note-nav alrededor del contenido. */
+  fenced?: boolean;
+}
+
+const { code, fenced = true } = Astro.props;
+
+const lines = code.trim().split('\n').map((line) => {
+  const idx = line.indexOf(':');
+  if (idx === -1) {
+    return { key: null, value: line };
+  }
+  return { key: line.slice(0, idx), value: line.slice(idx + 1) };
+});
+---
+
+<div class="code-preview">
+  <span class="code-preview__lang">note-nav</span>
+  <pre class="code-preview__body"><code>{fenced && <span class="tok-fence">```note-nav
+</span>}{lines.map((line, i) => (
+      <Fragment>
+        {line.key === null
+          ? <span class="tok-val">{line.value}</span>
+          : <Fragment><span class="tok-key">{line.key}</span><span class="tok-fence">:</span><span class="tok-val">{line.value}</span></Fragment>}
+        {i < lines.length - 1 ? '\n' : ''}
+      </Fragment>
+    ))}{fenced && <span class="tok-fence">
+```</span>}</code></pre>
+</div>

@@ -1,0 +1,71 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+---
+
+<DocsShell
+  title="Instalación"
+  description="Instala Note Nav Cards desde la galería de plugins de la comunidad o de forma manual copiando los archivos del release."
+>
+  <h2>Desde Community Plugins</h2>
+  <p>La forma recomendada de instalar el plugin cuando esté disponible en la galería oficial:</p>
+  <ol>
+    <li>Abre Obsidian y ve a <strong>Ajustes → Plugins de la comunidad</strong>.</li>
+    <li>Desactiva el <strong>Modo restringido</strong> si lo tienes activado.</li>
+    <li>Pulsa <strong>Examinar</strong> y busca <strong>Note Nav Cards</strong>.</li>
+    <li>Instálalo y luego actívalo desde la lista de plugins instalados.</li>
+  </ol>
+
+  <h2>Instalación manual</h2>
+  <p>
+    Si prefieres instalarlo a mano (por ejemplo desde un release de GitHub), descarga
+    los archivos del plugin y cópialos dentro de tu vault.
+  </p>
+
+  <h3>Archivos necesarios</h3>
+  <pre class="code-block"><code>main.js
+manifest.json
+styles.css</code></pre>
+
+  <h3>Pasos</h3>
+  <ol>
+    <li>Descarga <code>main.js</code>, <code>manifest.json</code> y <code>styles.css</code> del último release.</li>
+    <li>
+      Crea la carpeta <code>note-nav-cards</code> dentro de
+      <code>.obsidian/plugins/</code> en tu vault.
+    </li>
+    <li>Copia los tres archivos dentro de esa carpeta.</li>
+    <li>Reinicia Obsidian o recarga los plugins de la comunidad.</li>
+    <li>Activa <strong>Note Nav Cards</strong> en la lista de plugins instalados.</li>
+  </ol>
+
+  <h3>Carpeta final</h3>
+  <pre class="code-block"><code>.obsidian/plugins/note-nav-cards/
+├── main.js
+├── manifest.json
+└── styles.css</code></pre>
+
+  <div class="callout">
+    <span class="callout__icon">💡</span>
+    <div class="callout__body">
+      La carpeta <code>.obsidian</code> está oculta por defecto. Actívala desde tu
+      explorador de archivos si no la ves.
+    </div>
+  </div>
+
+  <h2>Compatibilidad</h2>
+  <ul>
+    <li>Obsidian 1.5.0 o superior.</li>
+    <li>Funciona en escritorio y móvil.</li>
+  </ul>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Inicio</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/uso">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Uso básico</span>
+    </a>
+  </nav>
+</DocsShell>

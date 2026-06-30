@@ -1,0 +1,66 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+---
+
+<DocsShell
+  title="Estructura del proyecto"
+  description="Organización de carpetas y archivos del plugin, separando el código fuente, los scripts de build y los artefactos generados."
+>
+  <h2>Árbol del proyecto</h2>
+  <pre class="code-block"><code>note-nav-cards/
+├── main.js
+├── styles.css
+├── manifest.json
+├── package.json
+├── package-lock.json
+├── README.md
+├── scripts/
+│   ├── build.js
+│   └── build-styles.js
+└── src/
+    ├── main.js
+    ├── components/
+    │   └── note-nav-card.js
+    ├── processors/
+    │   └── note-nav-processor.js
+    ├── settings/
+    │   ├── default-settings.js
+    │   └── settings-tab.js
+    ├── styles/
+    │   ├── cards.css
+    │   ├── css-vars.js
+    │   ├── responsive.css
+    │   ├── settings.css
+    │   └── variables.css
+    └── utils/
+        └── parse-config.js</code></pre>
+
+  <h2>Archivos principales</h2>
+  <ul>
+    <li><code>main.js</code> — archivo principal del plugin generado por esbuild.</li>
+    <li><code>styles.css</code> — hoja de estilos final generada por esbuild.</li>
+    <li><code>manifest.json</code> — metadatos del plugin (id, nombre, versión, compatibilidad).</li>
+    <li><code>scripts/</code> — scripts de build: <code>build.js</code> empaqueta el código y <code>build-styles.js</code> compila los estilos.</li>
+  </ul>
+
+  <h2>Código fuente (src/)</h2>
+  <ul>
+    <li><code>src/main.js</code> — punto de entrada que registra el plugin y sus piezas.</li>
+    <li><code>components/note-nav-card.js</code> — construye la UI de cada tarjeta.</li>
+    <li><code>processors/note-nav-processor.js</code> — registra y renderiza el bloque <code>note-nav</code>.</li>
+    <li><code>settings/</code> — ajustes por defecto y pestaña de configuración.</li>
+    <li><code>styles/</code> — estilos separados por responsabilidad (variables, tarjetas, ajustes, responsive) y <code>css-vars.js</code>.</li>
+    <li><code>utils/parse-config.js</code> — parser de las claves del bloque.</li>
+  </ul>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/desarrollo">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Desarrollo</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/publicacion">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Publicación</span>
+    </a>
+  </nav>
+</DocsShell>

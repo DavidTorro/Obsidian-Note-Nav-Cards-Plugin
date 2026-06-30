@@ -1,0 +1,41 @@
+---
+const items = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Instalación', href: '/instalacion' },
+  { label: 'Uso básico', href: '/uso' },
+  { label: 'Sintaxis', href: '/sintaxis' },
+  { label: 'Personalización', href: '/personalizacion' },
+  { label: 'Comportamiento', href: '/comportamiento' },
+  { label: 'Flujo de renderizado', href: '/flujo' },
+  { label: 'Capturas', href: '/capturas' },
+  { label: 'Desarrollo', href: '/desarrollo' },
+  { label: 'Estructura', href: '/estructura' },
+  { label: 'Publicación', href: '/publicacion' },
+  { label: 'Soporte', href: '/soporte' },
+];
+
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<aside class="docs-sidebar">
+  <nav class="docs-sidebar__group" aria-label="Documentación">
+    <p class="docs-sidebar__title">Documentación</p>
+    <ul class="docs-sidebar__list">
+      {items.map((item) => {
+        const href = item.href.replace(/\/$/, '') || '/';
+        const isCurrent = href === current;
+        return (
+          <li>
+            <a
+              class="docs-sidebar__link"
+              href={item.href}
+              aria-current={isCurrent ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+</aside>

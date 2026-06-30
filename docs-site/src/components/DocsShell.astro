@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from './Sidebar.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  eyebrow?: string;
+}
+
+const { title, description, eyebrow = 'Documentación' } = Astro.props;
+const pageTitle = `${title} — Note Nav Cards`;
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <div class="container docs">
+    <Sidebar />
+    <article class="docs-article">
+      <header class="docs-article__header">
+        <p class="docs-article__eyebrow">{eyebrow}</p>
+        <h1 class="docs-article__title">{title}</h1>
+        <p class="docs-article__lead">{description}</p>
+      </header>
+      <div class="prose">
+        <slot />
+      </div>
+    </article>
+  </div>
+</BaseLayout>

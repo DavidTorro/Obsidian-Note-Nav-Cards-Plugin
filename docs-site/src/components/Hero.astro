@@ -1,0 +1,23 @@
+---
+import CodePreview from './CodePreview.astro';
+
+const github = 'https://github.com/DavidTorro/Obsidian-Note-Nav-Cards-Plugin';
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <span class="badge"><span class="badge__dot"></span> Plugin de Obsidian</span>
+      <h1 class="hero__title">Note Nav <span class="grad">Cards</span></h1>
+      <p class="hero__subtitle">
+        Crea tarjetas de navegación elegantes entre notas de Obsidian usando un
+        bloque Markdown simple.
+      </p>
+      <div class="hero__actions">
+        <a href="/instalacion" class="btn btn--primary">Empezar</a>
+        <a href="/uso" class="btn btn--secondary">Ver uso básico</a>
+        <a href={github} class="btn btn--ghost" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>

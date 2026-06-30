@@ -1,0 +1,70 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+---
+
+<DocsShell
+  title="Publicación y releases"
+  description="Cómo preparar un release del plugin: los archivos que se adjuntan y la regla de que la versión del manifest debe coincidir con el tag de GitHub."
+>
+  <h2>Archivos del release</h2>
+  <p>Un release del plugin incluye exactamente estos tres archivos:</p>
+  <pre class="code-block"><code>main.js
+manifest.json
+styles.css</code></pre>
+
+  <h2>Versionado</h2>
+  <p>
+    La versión del <code>manifest.json</code> debe coincidir <strong>exactamente</strong>
+    con el tag de GitHub. El tag <strong>no</strong> debe llevar el prefijo <code>v</code>.
+  </p>
+
+  <div class="table-wrap">
+    <table class="docs-table">
+      <thead>
+        <tr>
+          <th>Ubicación</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>manifest.json</td>
+          <td><code>"version": "1.0.0"</code></td>
+        </tr>
+        <tr>
+          <td>Tag de GitHub</td>
+          <td><code>1.0.0</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__icon">⚠️</span>
+    <div class="callout__body">
+      El tag debe ser <code>1.0.0</code>, <strong>no</strong> <code>v1.0.0</code>. Si no
+      coinciden manifest y tag, el release no se reconocerá correctamente.
+    </div>
+  </div>
+
+  <h2>Pasos para publicar</h2>
+  <ol>
+    <li>Actualizar la versión en <code>manifest.json</code>.</li>
+    <li>Ejecutar el build (<code>npm run build</code>).</li>
+    <li>Hacer commit y push de los cambios.</li>
+    <li>Crear un release en GitHub con el tag correspondiente (sin <code>v</code>).</li>
+    <li>Adjuntar los archivos <code>main.js</code>, <code>manifest.json</code> y <code>styles.css</code>.</li>
+    <li>Publicar el release.</li>
+  </ol>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/estructura">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Estructura</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/soporte">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Soporte</span>
+    </a>
+  </nav>
+</DocsShell>

@@ -1,0 +1,79 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+---
+
+<DocsShell
+  title="Comportamiento"
+  description="Cómo resuelve el plugin los enlaces, cuándo renderiza cada tarjeta y qué ocurre cuando no hay claves válidas."
+>
+  <h2>Resolución de enlaces</h2>
+  <p>
+    Cada tarjeta enlaza con una nota del vault. El plugin resuelve el destino a partir
+    del nombre indicado en el bloque y abre la nota usando la API nativa de Obsidian
+    (<code>workspace.openLinkText</code>).
+  </p>
+
+  <h2>Contexto de la nota actual</h2>
+  <p>
+    El procesador utiliza el <code>sourcePath</code> de la nota donde está el bloque para
+    resolver la navegación en contexto. Así, los enlaces se interpretan desde la
+    ubicación de la nota actual, igual que cualquier enlace interno de Obsidian.
+  </p>
+
+  <h2>Renderizado de tarjetas</h2>
+  <ul>
+    <li>
+      Si solo existe una dirección (solo <code>anterior</code> o solo
+      <code>siguiente</code>), únicamente se renderiza esa tarjeta.
+    </li>
+    <li>El título de cada tarjeta debe coincidir con el nombre real de la nota en el vault.</li>
+    <li>Si no hay ninguna clave válida, se muestra un mensaje de estado vacío.</li>
+  </ul>
+
+  <h2>Estado vacío</h2>
+  <p>
+    Cuando el bloque no contiene claves reconocidas o ninguna nota válida, el componente
+    no falla: muestra un estado vacío indicando que no hay navegación configurada.
+  </p>
+
+  <h2>Modos de visualización</h2>
+  <p>
+    El componente se renderiza tanto en <strong>modo lectura</strong> como en la
+    <strong>previsualización de Markdown</strong>, de forma que las tarjetas se ven igual
+    en ambos contextos.
+  </p>
+
+  <h2>Flujo de renderizado</h2>
+  <ol>
+    <li><strong>Entrada:</strong> se detecta el bloque <code>note-nav</code> y el parser lee sus claves y valores.</li>
+    <li><strong>Lógica:</strong> se comprueba qué direcciones válidas existen (anterior / siguiente).</li>
+    <li><strong>Salida:</strong> se renderizan las tarjetas en <code>.note-nav</code> y un clic abre la nota con <code>workspace.openLinkText</code>.</li>
+  </ol>
+
+  <div class="callout">
+    <span class="callout__icon">🗺️</span>
+    <div class="callout__body">
+      ¿Prefieres verlo en un esquema? Echa un vistazo al diagrama completo en
+      <a href="/flujo">Flujo de renderizado</a>.
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="callout__icon">🧠</span>
+    <div class="callout__body">
+      El comportamiento es defensivo: claves desconocidas se ignoran y la ausencia de
+      notas válidas se resuelve con el estado vacío, nunca con un error.
+    </div>
+  </div>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/personalizacion">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Personalización</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/flujo">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Flujo de renderizado</span>
+    </a>
+  </nav>
+</DocsShell>

@@ -1,0 +1,78 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+---
+
+<DocsShell
+  title="Desarrollo local"
+  description="El proyecto usa JavaScript con CommonJS y esbuild para generar el bundle final del plugin. Aquí tienes la API utilizada y los comandos de desarrollo."
+>
+  <h2>Stack</h2>
+  <p>
+    El plugin está escrito en <strong>JavaScript</strong>, organizado con módulos
+    <strong>CommonJS</strong> y empaquetado con <strong>esbuild</strong>, que genera el
+    bundle final (<code>main.js</code> y <code>styles.css</code>).
+  </p>
+
+  <h2>Clonar el repositorio</h2>
+  <pre class="code-block"><code>git clone https://github.com/DavidTorro/Obsidian-Note-Nav-Cards-Plugin.git
+cd Obsidian-Note-Nav-Cards-Plugin</code></pre>
+
+  <h2>Comandos</h2>
+  <pre class="code-block"><code>npm install
+npm run build
+npm run dev</code></pre>
+  <ul>
+    <li><code>npm install</code> — instala las dependencias del proyecto.</li>
+    <li><code>npm run build</code> — genera el bundle de producción.</li>
+    <li><code>npm run dev</code> — compila en modo desarrollo con recarga.</li>
+  </ul>
+
+  <h2>API de Obsidian utilizada</h2>
+  <div class="table-wrap">
+    <table class="docs-table">
+      <thead>
+        <tr>
+          <th>API</th>
+          <th>Uso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>Plugin</code></td>
+          <td>Clase base del plugin, carga de ajustes y ciclo de vida.</td>
+        </tr>
+        <tr>
+          <td><code>registerMarkdownCodeBlockProcessor</code></td>
+          <td>Registro del bloque <code>note-nav</code> y su renderizado.</td>
+        </tr>
+        <tr>
+          <td><code>PluginSettingTab</code></td>
+          <td>Construcción de la pestaña de configuración.</td>
+        </tr>
+        <tr>
+          <td><code>Setting</code></td>
+          <td>UI del ajuste de color principal.</td>
+        </tr>
+        <tr>
+          <td><code>Notice</code></td>
+          <td>Feedback puntual para acciones de configuración.</td>
+        </tr>
+        <tr>
+          <td><code>workspace.openLinkText</code></td>
+          <td>Apertura de la nota enlazada desde la tarjeta.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/capturas">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Capturas</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/estructura">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Estructura</span>
+    </a>
+  </nav>
+</DocsShell>

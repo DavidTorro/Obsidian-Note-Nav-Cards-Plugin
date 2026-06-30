@@ -1,0 +1,52 @@
+---
+import DocsShell from '../components/DocsShell.astro';
+import ScreenshotCard from '../components/ScreenshotCard.astro';
+
+const shots = [
+  {
+    src: '/assets/Bloque-codigo-fuente.png',
+    title: 'Bloque en código fuente',
+    desc: 'El bloque note-nav tal y como se escribe en la nota.',
+  },
+  {
+    src: '/assets/Color-picker-ajustes.png',
+    title: 'Selector de color en ajustes',
+    desc: 'Ajuste del color principal desde la configuración del plugin.',
+  },
+  {
+    src: '/assets/Card-tema-claro.png',
+    title: 'Ejemplo en tema claro',
+    desc: 'Tarjetas renderizadas sobre una nota en tema claro.',
+  },
+  {
+    src: '/assets/Card-tema-oscuro.png',
+    title: 'Ejemplo en tema oscuro',
+    desc: 'Las mismas tarjetas adaptadas al tema oscuro.',
+  },
+];
+---
+
+<DocsShell
+  title="Capturas"
+  description="Galería visual del plugin: desde el bloque de código hasta las tarjetas renderizadas en tema claro y oscuro."
+>
+  <h2>Galería</h2>
+  <p>Una visión rápida del plugin en funcionamiento dentro de Obsidian.</p>
+
+  <div class="docs-gallery">
+    {shots.map((s) => (
+      <ScreenshotCard src={s.src} title={s.title} desc={s.desc} />
+    ))}
+  </div>
+
+  <nav class="docs-pager">
+    <a class="docs-pager__link" href="/flujo">
+      <span class="docs-pager__dir">← Anterior</span>
+      <span class="docs-pager__title">Flujo de renderizado</span>
+    </a>
+    <a class="docs-pager__link docs-pager__link--next" href="/desarrollo">
+      <span class="docs-pager__dir">Siguiente →</span>
+      <span class="docs-pager__title">Desarrollo</span>
+    </a>
+  </nav>
+</DocsShell>
