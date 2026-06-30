@@ -1,3 +1,5 @@
+![Banner](./assets/Banner.png)
+
 # 📝 Note Nav Cards
 
 ![Obsidian](https://img.shields.io/badge/-Obsidian-483699?style=for-the-badge&logo=obsidian&logoColor=white) ![Markdown](https://img.shields.io/badge/-Markdown-5b5b5b?style=for-the-badge&logo=markdown&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=000) ![CSS](https://img.shields.io/badge/-CSS-264de4?style=for-the-badge&logo=css3&logoColor=white) ![CommonJS](https://img.shields.io/badge/-CommonJS-20232a?style=for-the-badge&logo=node.js&logoColor=white) ![esbuild](https://img.shields.io/badge/-esbuild-FFCF00?style=for-the-badge&logo=esbuild&logoColor=000) ![v1.0.0](https://img.shields.io/badge/-v1.0.0-2ea44f?style=for-the-badge)
