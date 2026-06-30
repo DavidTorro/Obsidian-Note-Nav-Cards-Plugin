@@ -1,0 +1,9 @@
+/* 
+  Variables CSS globales del plugin
+  Define valores base reutilizables por las tarjetas y los ajustes.
+*/
+
+.note-nav,
+.note-nav-settings {
+  --note-nav-accent-color: var(--note-nav-accent, var(--interactive-accent));
+}

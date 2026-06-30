@@ -1,0 +1,22 @@
+{
+  "name": "note-nav-cards",
+  "version": "1.0.0",
+  "description": "Plugin de Obsidian para crear tarjetas de navegación entre notas.",
+  "main": "main.js",
+  "scripts": {
+    "build": "node scripts/build.js production",
+    "dev": "node scripts/build.js"
+  },
+  "keywords": [
+    "obsidian",
+    "plugin",
+    "navigation",
+    "cards",
+    "notes"
+  ],
+  "author": "David Torró",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}

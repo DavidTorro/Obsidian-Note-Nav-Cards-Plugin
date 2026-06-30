@@ -1,0 +1,23 @@
+/* 
+  Adaptación responsive del plugin
+  Ajusta tarjetas y pantalla de ajustes para dispositivos o paneles estrechos.
+*/
+
+@media (max-width: 640px) {
+  .note-nav {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .note-nav-card {
+    min-height: 90px;
+  }
+
+  .note-nav-settings-example-header {
+    flex-direction: column;
+  }
+
+  .note-nav-settings-copy-button {
+    width: 100%;
+  }
+}

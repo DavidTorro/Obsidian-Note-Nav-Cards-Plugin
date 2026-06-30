@@ -1,0 +1,5 @@
+backup/
+node_modules/
+main.js
+!src/main.js
+styles.css

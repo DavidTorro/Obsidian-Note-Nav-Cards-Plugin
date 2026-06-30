@@ -1,0 +1,221 @@
+/* 
+  Estilos de las tarjetas de navegación
+  Define el layout, colores, hover, iconos y adaptación al tema claro/oscuro
+*/
+
+.note-nav {
+  width: 100%;
+  max-width: 760px;
+  margin: 2rem auto 0;
+  padding-top: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.note-nav-card {
+  position: relative;
+  isolation: isolate;
+
+  min-height: 96px;
+  padding: 1rem 1.15rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--note-nav-accent-color) 38%,
+    var(--background-modifier-border)
+  );
+
+  color: var(--text-normal) !important;
+  text-decoration: none !important;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 14px 34px color-mix(in srgb, var(--note-nav-accent-color) 16%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.note-nav-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--note-nav-accent-color) 18%, var(--background-secondary)),
+      color-mix(in srgb, var(--note-nav-accent-color) 10%, var(--background-primary))
+    );
+}
+
+.note-nav-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 88% 35%,
+      color-mix(in srgb, var(--note-nav-accent-color) 45%, transparent),
+      transparent 46%
+    );
+
+  opacity: 0.9;
+}
+
+.note-nav-card:hover {
+  transform: translateY(-4px);
+
+  border-color: color-mix(
+    in srgb,
+    var(--note-nav-accent-color) 78%,
+    var(--background-modifier-border)
+  );
+
+  box-shadow:
+    0 18px 44px color-mix(in srgb, var(--note-nav-accent-color) 28%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.note-nav-card:focus,
+.note-nav-card:focus-visible {
+  outline: 2px solid color-mix(
+    in srgb,
+    var(--note-nav-accent-color) 80%,
+    transparent
+  );
+  outline-offset: 2px;
+}
+
+.note-nav-kicker {
+  margin-bottom: 0.45rem;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: color-mix(
+    in srgb,
+    var(--note-nav-accent-color) 45%,
+    var(--text-muted)
+  );
+}
+
+.note-nav-title {
+  max-width: calc(100% - 48px);
+
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.2;
+
+  color: var(--text-normal);
+}
+
+.note-nav-icon {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 999px;
+
+  background: color-mix(
+    in srgb,
+    var(--note-nav-accent-color) 35%,
+    var(--background-secondary)
+  );
+
+  color: var(--note-nav-accent-color);
+
+  font-size: 1.25rem;
+  font-weight: 900;
+
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--note-nav-accent-color) 28%, transparent),
+    0 8px 20px color-mix(in srgb, var(--note-nav-accent-color) 28%, transparent);
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.note-nav-card:hover .note-nav-icon {
+  background: color-mix(
+    in srgb,
+    var(--note-nav-accent-color) 52%,
+    var(--background-secondary)
+  );
+
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--note-nav-accent-color) 40%, transparent),
+    0 10px 26px color-mix(in srgb, var(--note-nav-accent-color) 38%, transparent);
+}
+
+.note-nav-card-next:hover .note-nav-icon {
+  transform: translateX(4px);
+}
+
+.note-nav-card-prev:hover .note-nav-icon {
+  transform: translateX(-4px);
+}
+
+.note-nav-empty {
+  padding: 1rem;
+
+  border-radius: 14px;
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--note-nav-accent-color) 40%,
+    var(--background-modifier-border)
+  );
+
+  background: color-mix(
+    in srgb,
+    var(--note-nav-accent-color) 14%,
+    var(--background-secondary)
+  );
+
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.theme-light .note-nav-card::before {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--note-nav-accent-color) 20%, #ffffff),
+      color-mix(in srgb, var(--note-nav-accent-color) 10%, var(--background-primary))
+    );
+}
+
+.theme-dark .note-nav-card::before {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--note-nav-accent-color) 22%, var(--background-secondary)),
+      color-mix(in srgb, var(--note-nav-accent-color) 12%, var(--background-primary))
+    );
+}

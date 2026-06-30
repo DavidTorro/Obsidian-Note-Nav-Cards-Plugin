@@ -1,0 +1,9 @@
+{
+  "id": "note-nav-cards",
+  "name": "Note Nav Cards",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Componente de navegación para enlazar con la nota anterior y la siguiente.",
+  "author": "David Torró",
+  "isDesktopOnly": false
+}
