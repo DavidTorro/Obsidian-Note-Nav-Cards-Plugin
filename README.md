@@ -118,6 +118,24 @@ flowchart LR
     style S3 fill:#08111f,stroke:#34d399,stroke-width:1.5px,stroke-dasharray: 4 4,color:#e2e8f0
 ```
 
+## 📸 Capturas
+
+### Bloque en código fuente
+
+![Bloque en código fuente](./assets/Bloque-codigo-fuente.png)
+
+### Color picker en ajustes
+
+![Color picker en ajustes](./assets/Color-picker-ajustes.png)
+
+### Ejemplo en tema claro
+
+![Ejemplo en nota clara](./assets/Card-tema-claro.png)
+
+### Ejemplo en tema oscuro
+
+![Ejemplo en nota oscura](./assets/Card-tema-oscuro.png)
+
 ## 🧠 Comportamiento
 
 - El título de cada tarjeta debe coincidir con el nombre real de la nota en el vault.
@@ -146,6 +164,13 @@ El plugin expone un único ajuste visible:
 ## 🧪 Desarrollo local
 
 El proyecto usa CommonJS y esbuild para generar el bundle final del plugin.
+
+### Clonar el repositorio
+
+```bash
+git clone https://github.com/DavidTorro/Obsidian-Note-Nav-Cards-Plugin.git
+cd Obsidian-Note-Nav-Cards-Plugin
+```
 
 ### Dependencias
 
