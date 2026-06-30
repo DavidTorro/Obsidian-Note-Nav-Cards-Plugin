@@ -1,9 +1,9 @@
 {
   "id": "note-nav-cards",
   "name": "Note Nav Cards",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "minAppVersion": "1.5.0",
-  "description": "Render navigation cards between notes using simple Markdown code blocks.",
+  "description": "Crea tarjetas de navegación entre notas utilizando bloques de código Markdown simples.",
   "author": "David Torró",
   "authorUrl": "https://github.com/DavidTorro",
   "isDesktopOnly": false
