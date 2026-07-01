@@ -6,7 +6,7 @@
 
 Plugin de Obsidian para crear tarjetas de navegación entre notas con un bloque de código bastante directo. La idea es simple: defines la nota anterior, la siguiente o las dos, y el plugin se encarga de montar la UI usando la API nativa de Obsidian para procesar bloques Markdown, abrir enlaces internos y exponer ajustes sin complicarte demasiado.
 
-[Documentación completa](https://note-nav.davidtorro.com)
+[🌐 Documentación completa](https://note-nav.davidtorro.com)
 
 ## ✨ Qué hace
 
